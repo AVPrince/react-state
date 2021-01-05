@@ -16,15 +16,21 @@
 
     <script type="text/babel">
         class Counter extends React.Component {
+            //Adding a constructor so we can set our initial state
             constructor(props){
+                //let the parent class do its thing with props
                 super(props);
-
+                //setup the initial value for count in state
                 this.state = {
-                    count: 0
+                    count: 0,
                 };
             }
+            //simple render method just displaying the count
             render() {
-                setTimeout(() => {               
+                setTimeout(() => {
+                    console.log('boom');
+                    //use a callback function when updating state with from a value already in state
+                    //https://reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous               
                     this.setState((state, props) => ({
                         count: state.count+1
                     }));
